@@ -1,0 +1,24 @@
+{
+  "dataset": "OpenRL/daily_dialog",
+  "revision": "1668faf0c0dc44664f108c489fd0666128db2c48",
+  "splits": {
+    "train": {
+      "dialogues": 11118,
+      "characters": 5591687,
+      "sha256": "825b456cae8375f5515dfbdc4e46ed0805e38032b422a9883f40a1062d5768eb",
+      "tokens": 1811242
+    },
+    "validation": {
+      "dialogues": 1000,
+      "characters": 516901,
+      "sha256": "868b392522d35882175233e670d5789328e288cc308956dfcc7385cc474d6e3a",
+      "tokens": 167390
+    },
+    "test": {
+      "dialogues": 1000,
+      "characters": 504409,
+      "sha256": "493e769dff9a9dfe673503edac53dd49fa88c90715156ed8eedbbf09a29a01c1",
+      "tokens": 163581
+    }
+  }
+}

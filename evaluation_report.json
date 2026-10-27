@@ -1,0 +1,135 @@
+{
+  "evaluated_at_utc": "2026-10-25T23:34:58.781431+00:00",
+  "checkpoint": "C:\\Users\\wcx16\\Desktop\\gpt\\model_final.pth",
+  "checkpoint_sha256": "1b74d666c2ebab3297e291fe3246d6e0db049e489d30dacd2d929555358dd1da",
+  "parameters": 10797388,
+  "tokenizer_vocabulary": 76,
+  "character_model": true,
+  "context_tokens": 256,
+  "corpus_characters": 3778241,
+  "train_tokens": 3400416,
+  "validation_tokens": 377825,
+  "normalized_validation_turns": 6301,
+  "validation_turns_also_in_training": 5952,
+  "protocol": "eval mode, FP32, 256 fixed-seed random windows per split, 256 next-token targets per window, batch size 8",
+  "metrics": {
+    "train": {
+      "sampled_next_tokens": 65536,
+      "nll_nats_per_token": 0.09121578153432097,
+      "perplexity_per_token": 1.0955053695855257,
+      "top1_next_token_accuracy": 0.9704437255859375,
+      "nll_last_128_positions": 0.043833358189031266,
+      "bits_per_character": 0.13159655567037595
+    },
+    "validation": {
+      "sampled_next_tokens": 65536,
+      "nll_nats_per_token": 0.09885625987626652,
+      "perplexity_per_token": 1.103907612337507,
+      "top1_next_token_accuracy": 0.9683837890625,
+      "nll_last_128_positions": 0.05169057005121637,
+      "bits_per_character": 0.14261943588432033,
+      "sampled_tokens_in_novel_turns": 4944,
+      "novel_turn_nll": 0.21271353303937238,
+      "seen_turn_nll": 0.08956608363982616
+    }
+  },
+  "samples": [
+    {
+      "category": "greeting",
+      "question": "Hello?",
+      "seed": 1337,
+      "reply": "Oh my gosh, hey! It's been what, like a year?",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "identity",
+      "question": "Who are you?",
+      "seed": 1337,
+      "reply": "Absolutely good, have a seat. Do you have a photo ID with you?",
+      "complete_reply_found_in_training": false
+    },
+    {
+      "category": "arithmetic",
+      "question": "What is 2 + 2?",
+      "seed": 1337,
+      "reply": "I'm so in. How long were you thinking? A weekend or the full week?",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "fact",
+      "question": "What is the capital of France?",
+      "seed": 1337,
+      "reply": "If it keeps up, might be worth seeing Dr. Kim about it.",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "instruction",
+      "question": "Say exactly: banana.",
+      "seed": 1337,
+      "reply": "You're a lifesaver, Emma. Coffee's on me.",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "daily_advice",
+      "question": "I'm feeling tired today. What should I do?",
+      "seed": 1337,
+      "reply": "Rest, plenty of fluids, and give it a few days.",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "daily_request",
+      "question": "Can you help me move this weekend?",
+      "seed": 1337,
+      "reply": "I can do noon that see how it feels. They look great.",
+      "complete_reply_found_in_training": false
+    },
+    {
+      "category": "daily_problem",
+      "question": "I lost my keys. What should I do?",
+      "seed": 1337,
+      "reply": "Rest, plenty of fluids, and give it a few days.",
+      "complete_reply_found_in_training": true
+    },
+    {
+      "category": "short_context_memory",
+      "prompt": "A: My name is Alex.\nB: Nice to meet you, Alex.\nA: What is my name?\nB:",
+      "seed": 1337,
+      "reply": "Works for me. Should I bring anything?"
+    },
+    {
+      "category": "alternate_seed",
+      "question": "Who are you?",
+      "seed": 2026,
+      "reply": "The tram fally dog's in the analytics portal and class starts at 3 o'clock."
+    },
+    {
+      "category": "alternate_seed",
+      "question": "What is 2 + 2?",
+      "seed": 2026,
+      "reply": "I'm so in. How long were you thinking? A weekend or the full week?"
+    }
+  ],
+  "corpus_audit": {
+    "validation_turns": 6301,
+    "exact_matching_validation_turns": 5952,
+    "exact_matching_validation_turn_fraction": 0.9446119663545469,
+    "complete_training_dialogues": 7085,
+    "complete_validation_dialogues": 792,
+    "normalized_complete_validation_dialogues_also_in_training": 0,
+    "median_complete_dialogue_characters": 475,
+    "fraction_complete_dialogues_over_256_characters": 1.0
+  },
+  "training_configuration_audit": {
+    "train_py_max_iters": 5000,
+    "config_TrainConfig_max_iters": 2000,
+    "TrainConfig_used_in_training_entrypoint": false
+  },
+  "limitations": [
+    "Only model_final.pth was available for evaluation; no BPE model checkpoint was present.",
+    "Loss estimates use random context windows, not the complete validation corpus or an independent external test set.",
+    "Character prediction accuracy is not question-answering accuracy.",
+    "Single-turn generation samples use temperature 0.8 and fixed seeds; the sample set is too small for a general benchmark score.",
+    "The checkpoint contains no training-step metadata or loss history; convergence dynamics cannot be reconstructed.",
+    "Loss and perplexity per token cannot be directly compared across character and BPE tokenizers."
+  ]
+}
